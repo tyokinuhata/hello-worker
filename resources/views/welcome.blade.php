@@ -6,13 +6,10 @@
         <link rel="stylesheet" href="css/app.css"/>
     </head>
     <body>
-        <div id="app">
-            <example></example>
-        </div>
+        <h1>hello, worker</h1>
         <script>
             window.Laravel = window.Laravel || {};
             window.Laravel.csrfToken = "{{csrf_token()}}";
         </script>
-        <script src="js/app.js"></script>
     </body>
 </html>
