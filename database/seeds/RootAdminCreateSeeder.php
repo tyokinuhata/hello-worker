@@ -12,10 +12,10 @@ class RootAdminCreateSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'hoge',
-            'user_id' => '',
-            'mail_address' => '',
-            'password' => '',
+            'name' => env('ADMIN_NAME', 'root'),
+            'user_id' => env('ADMIN_ID', 'root'),
+            'mail_address' => env('ADMIN_ADDRESS', 'helloworker@example.com'),
+            'password' => bcrypt(env('ADMIN_PASSWORD', 'toor')),
             'authority' => true
         ]);
     }
