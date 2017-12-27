@@ -14,11 +14,12 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id')->comment('自動採番される番号');
-            $table->string('user_id')->comment('半角英数字で構成されるユーザーのID')->unique();
-            $table->string('password')->comment('パスワードのハッシュ値');
-            $table->string('user_name')->comment('スクリーンネーム');
-            $table->boolean('authority')->comment('管理者権限の有無')->default(false);
+            $table->increments('id');
+            $table->string('name')->comment('名前');
+            $table->string('user_id')->comment('ユーザID')->unique();
+            $table->string('mail_address')->comment('メールアドレス')->unique();
+            $table->string('password')->comment('パスワード');
+            $table->boolean('authority')->comment('管理者権限')->default(false);
             $table->timestamps();
         });
     }
