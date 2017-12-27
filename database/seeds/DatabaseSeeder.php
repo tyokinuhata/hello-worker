@@ -11,19 +11,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create();
+//        $faker = \Faker\Factory::create();
+//
+//        $user = new \App\User();
+//        $user->user_id = $faker->unique()->userName;
+//        $user->password = bcrypt('password');
+//        $user->user_name = $faker->name($gender = null);
+//        $user->authority = false;
+//        $user->save();
+//
+//        $post = new \App\Post();
+//        $post->user_id = $faker->unique()->userName;
+//        $post->in = $faker->dateTime($max = 'now', $timezone = date_default_timezone_get());
+//        $post->out = $faker->dateTime($max = 'now', $timezone = date_default_timezone_get());
+//        $post->save();
 
-        $user = new \App\User();
-        $user->user_id = $faker->unique()->userName;
-        $user->password = bcrypt('password');
-        $user->user_name = $faker->name($gender = null);
-        $user->authority = false;
-        $user->save();
-
-        $post = new \App\Post();
-        $post->user_id = $faker->unique()->userName;
-        $post->in = $faker->dateTime($max = 'now', $timezone = date_default_timezone_get());
-        $post->out = $faker->dateTime($max = 'now', $timezone = date_default_timezone_get());
-        $post->save();
+        $this->call(RootAdminCreateSeeder::class);
     }
 }
