@@ -43179,7 +43179,7 @@ exports = module.exports = __webpack_require__(43)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43481,7 +43481,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             nowDay: 0,
             nowHour: 0,
             nowMin: 0,
-            nowSec: 0
+            nowSec: 0,
+            start: false
         };
     },
 
@@ -43492,6 +43493,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             } else {
                 return num;
             }
+        },
+        changeState: function changeState() {
+            this.start = !this.start;
         }
     },
     created: function created() {
@@ -43534,65 +43538,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 57 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "jumbotron text-center mt-100" }, [
-    _c("h2", [
-      _vm._v(
-        _vm._s(_vm.nowYear) +
-          "年" +
-          _vm._s(_vm.nowMonth) +
-          "月\n        " +
-          _vm._s(_vm.zeroPadding(_vm.nowDate)) +
-          "日\n        (" +
-          _vm._s(_vm.nowDay) +
-          ")\n        " +
-          _vm._s(_vm.zeroPadding(_vm.nowHour)) +
-          "時\n        " +
-          _vm._s(_vm.zeroPadding(_vm.nowMin)) +
-          "分\n        " +
-          _vm._s(_vm.zeroPadding(_vm.nowSec)) +
-          "秒"
-      )
-    ]),
-    _vm._v(" "),
-    _c("h2", { staticClass: "mt-10" }, [_vm._v("出勤時間: 00時間00分00秒")]),
-    _vm._v(" "),
-    _vm._m(0)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-30" }, [
-      _c("button", { staticClass: "btn btn-success mr-10" }, [_vm._v("在宅")]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-primary mr-10" }, [_vm._v("出勤")]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-default mr-10" }, [_vm._v("退勤")]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-warning mr-10" }, [_vm._v("停止")]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-info mr-10" }, [_vm._v("再開")]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-danger" }, [_vm._v("取消")])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-11e8df86", module.exports)
-  }
-}
+throw new Error("Module build failed: SyntaxError: Unexpected token (1:849)\n    at Parser.pp$4.raise (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:2610:13)\n    at Parser.pp.unexpected (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:637:8)\n    at Parser.pp$3.parseExprAtom (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:2094:10)\n    at Parser.parseExprAtom (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:4372:24)\n    at Parser.pp$3.parseExprSubscripts (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1955:19)\n    at Parser.pp$3.parseMaybeUnary (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1932:17)\n    at Parser.pp$3.parseExprOps (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1874:19)\n    at Parser.pp$3.parseMaybeConditional (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1857:19)\n    at Parser.pp$3.parseMaybeAssign (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1832:19)\n    at Parser.pp$3.parsePropertyValue (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:2310:87)\n    at Parser.parseObj (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:4472:14)\n    at Parser.pp$3.parseExprAtom (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:2077:17)\n    at Parser.parseExprAtom (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:4372:24)\n    at Parser.pp$3.parseExprSubscripts (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1955:19)\n    at Parser.pp$3.parseMaybeUnary (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1932:17)\n    at Parser.pp$3.parseExprOps (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1874:19)\n    at Parser.pp$3.parseMaybeConditional (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1857:19)\n    at Parser.pp$3.parseMaybeAssign (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1832:19)\n    at Parser.pp$3.parsePropertyValue (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:2310:87)\n    at Parser.parseObj (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:4472:14)\n    at Parser.pp$3.parseExprAtom (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:2077:17)\n    at Parser.parseExprAtom (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:4372:24)\n    at Parser.pp$3.parseExprSubscripts (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1955:19)\n    at Parser.pp$3.parseMaybeUnary (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1932:17)\n    at Parser.pp$3.parseExprOps (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1874:19)\n    at Parser.pp$3.parseMaybeConditional (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1857:19)\n    at Parser.pp$3.parseMaybeAssign (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1832:19)\n    at Parser.pp$3.parseExprList (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:2528:20)\n    at Parser.pp$3.parseSubscripts (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1983:29)\n    at Parser.pp$3.parseExprSubscripts (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1958:21)\n    at Parser.pp$3.parseMaybeUnary (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1932:17)\n    at Parser.pp$3.parseExprOps (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1874:19)\n    at Parser.pp$3.parseMaybeConditional (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1857:19)\n    at Parser.pp$3.parseMaybeAssign (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:1832:19)\n    at Parser.pp$3.parseExprList (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:2528:20)\n    at Parser.pp$3.parseExprAtom (/Users/tyokinuhata/index/workspace/hello-worker/node_modules/vue-template-es2015-compiler/buble.js:2073:26)");
 
 /***/ })
 /******/ ]);
