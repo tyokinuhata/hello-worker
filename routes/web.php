@@ -8,6 +8,10 @@ Route::get('/works', function () {
     return view('works.top');
 });
 
+Route::get('/works/payslip', function () {
+    return view('works.payslip');
+});
+
 // 管理画面
 Route::get('/admin', function () {
     return view('admin.top');
