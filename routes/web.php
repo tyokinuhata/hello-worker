@@ -14,9 +14,7 @@ Route::get('/works/payslip', function () {
 });
 
 // 管理画面
-Route::get('/admin', function () {
-    return view('admin.top');
-});
+Route::get('/admin', 'AdminController@index');
 
 Auth::routes();
 
