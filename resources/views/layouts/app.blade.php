@@ -26,11 +26,11 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{ url('/') }}">トップ</a></li>
                             <li><a href="{{ url('/works') }}">勤怠管理トップ</a></li>
-                            <li><a href="{{ url('/works') }}">給与明細</a></li>
                             @guest
                                 <li><a href="{{ route('login') }}">サインイン</a></li>
                                 <li><a href="{{ route('register') }}">サインアップ</a></li>
                             @else
+                                <li><a href="{{ url('/works') }}">給与明細</a></li>
                                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('signout').submit();">サインアウト</a></li>
                                 <form id="signout" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
                             @endguest
