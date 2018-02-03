@@ -8,12 +8,16 @@ use Config;
 
 class WorksController extends Controller {
     public function index() {
-        dd(Config::get('mode'));
-        return view('works.top');
+        return view('works.top', [
+            'mode' => Config::get('mode')
+        ]);
     }
 
     public function __construct()
     {
+        Config::set([
+            'mode' => 'works'
+        ]);
         $this->middleware('auth');
     }
 }

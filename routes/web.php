@@ -7,6 +7,9 @@ Route::get('/', function () {
 Route::get('/works', 'WorksController@index');
 
 Route::get('/works/payslip', function () {
+    Config::set(
+        ['mode' => 'works'
+    ]);
     return view('works.payslip');
 });
 

@@ -26,10 +26,14 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="{{ url('/') }}">トップ</a></li>
-                            <li><a href="{{ url('/works') }}">勤怠管理トップ</a></li>
+                            @if(Config::get('mode') === 'works')
+                                <li><a href="{{ url('/works') }}">勤怠管理トップ</a></li>
+                            @else
+                                <li><a href="{{ url('/works') }}">管理画面トップ</a></li>
+                                <li><a href="{{ route('register') }}">サインアップ</a></li>
+                            @endif
                             @guest
                                 <li><a href="{{ route('login') }}">サインイン</a></li>
-                                <li><a href="{{ route('register') }}">サインアップ</a></li>
                             @else
                                 <li><a href="{{ url('/works/payslip') }}">給与明細</a></li>
                                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('signout').submit();">サインアウト</a></li>
