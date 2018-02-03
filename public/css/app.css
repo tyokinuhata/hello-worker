@@ -8391,3 +8391,12 @@ button.close {
   height: auto;
 }
 
+.form {
+  display: inline;
+  width: 80%;
+}
+
+._label {
+  width: 150px;
+}
+
