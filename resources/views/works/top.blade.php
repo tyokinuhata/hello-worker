@@ -1,16 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="jumbotron">
-        <div>2017年12月01日(金) 00時00分00秒</div>
-        <div>出勤時間: 00時間00分00秒</div>
-        <div>
-            <input type="checkbox" id="remote">
-            <label for="remote">リモート</label>
-            <button class="btn btn-primary">出勤</button>
-            <button class="btn btn-default">退勤</button>
-            <button class="btn btn-warning">停止</button>
-            <button class="btn btn-info">再開</button>
+    <div class="jumbotron text-center mt-100">
+        <h2>2017年12月01日(金) 00時00分00秒</h2>
+        <h2 class="mt-10">出勤時間: 00時間00分00秒</h2>
+        <div class="mt-30">
+            <button class="btn btn-success mr-10">在宅</button>
+            <button class="btn btn-primary mr-10">出勤</button>
+            <button class="btn btn-default mr-10">退勤</button>
+            <button class="btn btn-warning mr-10">停止</button>
+            <button class="btn btn-info mr-10">再開</button>
             <button class="btn btn-danger">取消</button>
         </div>
     </div>
