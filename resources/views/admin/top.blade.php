@@ -13,7 +13,7 @@
             </form>
         </div>
         <div>
-            <h2>[給与明細]</h2>
+            <h2>給与明細</h2>
             <table class="table bg-white">
                 <tr>
                     <th>合計出勤日数</th>
@@ -61,10 +61,28 @@
                     </tr>
                 </table>
             </form>
-            {{--ページネーション--}}
+            <div class="text-center">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#">
+                            <span aria-hidden="true">»</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div>
-            <h2>[追加]</h2>
+            <h2>追加</h2>
             <form action="">
                 <table class="table bg-white">
                     <tr>
