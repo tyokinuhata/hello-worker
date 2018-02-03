@@ -20,6 +20,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
+                        <img src="./image/logo.png" alt="" class="logo mt-10">
                         <a class="navbar-brand" href="{{ url('/') }}">hello, worker</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
