@@ -42,6 +42,9 @@
         <div class="container">
             @yield('content')
         </div>
+        <div class="footer">
+            Copyright 2017 - 2018 ASS All Rights Reserved
+        </div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
