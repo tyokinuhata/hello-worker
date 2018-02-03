@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->comment('パスワード');
 //            $table->boolean('authority')->comment('管理者権限')->default(false);
             $table->timestamps();
+            $table->rememberToken();
         });
     }
 
