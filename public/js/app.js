@@ -43179,7 +43179,7 @@ exports = module.exports = __webpack_require__(43)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43455,6 +43455,15 @@ module.exports = function listToStyles (parentId, list) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 57 */
@@ -43471,7 +43480,33 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("hoge")])])
+    return _c("div", { staticClass: "jumbotron text-center mt-100" }, [
+      _c("h2", [_vm._v("2017年12月01日(金) 00時00分00秒")]),
+      _vm._v(" "),
+      _c("h2", { staticClass: "mt-10" }, [_vm._v("出勤時間: 00時間00分00秒")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mt-30" }, [
+        _c("button", { staticClass: "btn btn-success mr-10" }, [
+          _vm._v("在宅")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-primary mr-10" }, [
+          _vm._v("出勤")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-default mr-10" }, [
+          _vm._v("退勤")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-warning mr-10" }, [
+          _vm._v("停止")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-info mr-10" }, [_vm._v("再開")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-danger" }, [_vm._v("取消")])
+      ])
+    ])
   }
 ]
 render._withStripped = true
