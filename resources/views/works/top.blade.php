@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    <div id="works-top">
+        <works-top></works-top>
+    </div>
     <div class="jumbotron text-center mt-100">
         <h2>2017年12月01日(金) 00時00分00秒</h2>
         <h2 class="mt-10">出勤時間: 00時間00分00秒</h2>

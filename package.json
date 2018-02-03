@@ -16,5 +16,8 @@
         "laravel-mix": "^2.0.0",
         "lodash": "^4.17.4"
     },
-    "dependencies": {}
+    "dependencies": {
+        "axios": "^0.17.1",
+        "vue": "^2.5.13"
+    }
 }
