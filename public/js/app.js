@@ -43179,7 +43179,7 @@ exports = module.exports = __webpack_require__(43)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43447,8 +43447,10 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 /* 56 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -43464,6 +43466,71 @@ module.exports = function listToStyles (parentId, list) {
 //
 //
 //
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            nowYear: 0,
+            nowMonth: 0,
+            nowDate: 0,
+            nowDay: 0,
+            nowHour: 0,
+            nowMin: 0,
+            nowSec: 0
+        };
+    },
+
+    methods: {
+        zeroPadding: function zeroPadding(num) {
+            if (num < 10) {
+                return '0' + num;
+            } else {
+                return num;
+            }
+        }
+    },
+    created: function created() {
+        var _this = this;
+
+        setInterval(function () {
+            var nowTime = new Date();
+            _this.nowYear = nowTime.getFullYear();
+            _this.nowMonth = nowTime.getMonth() + 1;
+            _this.nowDate = nowTime.getDate();
+            _this.nowHour = nowTime.getHours();
+            _this.nowMin = nowTime.getMinutes();
+            _this.nowSec = nowTime.getSeconds();
+            switch (nowTime.getDay()) {
+                case 0:
+                    _this.nowDay = '日';
+                    break;
+                case 1:
+                    _this.nowDay = '月';
+                    break;
+                case 2:
+                    _this.nowDay = '火';
+                    break;
+                case 3:
+                    _this.nowDay = '水';
+                    break;
+                case 4:
+                    _this.nowDay = '木';
+                    break;
+                case 5:
+                    _this.nowDay = '金';
+                    break;
+                case 6:
+                    _this.nowDay = '土';
+                    break;
+            }
+        }, 1000);
+    }
+});
 
 /***/ }),
 /* 57 */
@@ -43473,39 +43540,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "jumbotron text-center mt-100" }, [
+    _c("h2", [
+      _vm._v(
+        _vm._s(_vm.nowYear) +
+          "年" +
+          _vm._s(_vm.nowMonth) +
+          "月\n        " +
+          _vm._s(_vm.zeroPadding(_vm.nowDate)) +
+          "日\n        (" +
+          _vm._s(_vm.nowDay) +
+          ")\n        " +
+          _vm._s(_vm.zeroPadding(_vm.nowHour)) +
+          "時\n        " +
+          _vm._s(_vm.zeroPadding(_vm.nowMin)) +
+          "分\n        " +
+          _vm._s(_vm.zeroPadding(_vm.nowSec)) +
+          "秒"
+      )
+    ]),
+    _vm._v(" "),
+    _c("h2", { staticClass: "mt-10" }, [_vm._v("出勤時間: 00時間00分00秒")]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "jumbotron text-center mt-100" }, [
-      _c("h2", [_vm._v("2017年12月01日(金) 00時00分00秒")]),
+    return _c("div", { staticClass: "mt-30" }, [
+      _c("button", { staticClass: "btn btn-success mr-10" }, [_vm._v("在宅")]),
       _vm._v(" "),
-      _c("h2", { staticClass: "mt-10" }, [_vm._v("出勤時間: 00時間00分00秒")]),
+      _c("button", { staticClass: "btn btn-primary mr-10" }, [_vm._v("出勤")]),
       _vm._v(" "),
-      _c("div", { staticClass: "mt-30" }, [
-        _c("button", { staticClass: "btn btn-success mr-10" }, [
-          _vm._v("在宅")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary mr-10" }, [
-          _vm._v("出勤")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-default mr-10" }, [
-          _vm._v("退勤")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-warning mr-10" }, [
-          _vm._v("停止")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-info mr-10" }, [_vm._v("再開")]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-danger" }, [_vm._v("取消")])
-      ])
+      _c("button", { staticClass: "btn btn-default mr-10" }, [_vm._v("退勤")]),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-warning mr-10" }, [_vm._v("停止")]),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-info mr-10" }, [_vm._v("再開")]),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-danger" }, [_vm._v("取消")])
     ])
   }
 ]
