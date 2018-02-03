@@ -7,10 +7,11 @@ use Auth;
 
 class WorksController extends Controller {
     public function index() {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         return view('works.top');
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 }
