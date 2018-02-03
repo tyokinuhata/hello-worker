@@ -4,9 +4,7 @@ Route::get('/', function () {
 });
 
 // 勤怠管理
-Route::get('/works', function () {
-    return view('works.top');
-});
+Route::get('/works', 'WorksController@index');
 
 Route::get('/works/payslip', function () {
     return view('works.payslip');
