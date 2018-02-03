@@ -31,12 +31,6 @@
                 position: relative;
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
             .content {
                 text-align: center;
             }
@@ -68,8 +62,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="">勤怠管理</a>
-                    <a href="">管理画面</a>
+                    <a href="{{ url('/works') }}">勤怠管理</a>
+                    <a href="{{ url('/admin') }}">管理画面</a>
                 </div>
             </div>
         </div>
