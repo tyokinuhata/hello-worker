@@ -9,7 +9,11 @@
             <span>{{ zeroPadding(nowMin) }}分</span>
             <span>{{ zeroPadding(nowSec) }}秒</span>
         </h2>
-        <h2 class="mt-10">出勤時間: 00時間00分00秒</h2>
+        <h2 class="mt-10">
+            <span>出勤時間:</span>
+            <span>{{ workHour }}時間</span>
+            <span>{{ workMin }}分</span>
+        </h2>
         <div class="mt-30">
             <button class="btn btn-success mr-10" :class="remote" @click="isRemote()">在宅</button>
             <button class="btn btn-primary mr-10" :disabled="start" @click="isStart()">出勤</button>
@@ -37,7 +41,9 @@ export default {
             stop: true,
             pause: true,
             restart: true,
-            cancel:true
+            cancel:true,
+            workHour: 0,
+            workMin: 0,
         }
     },
     methods: {

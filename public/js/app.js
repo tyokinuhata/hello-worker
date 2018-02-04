@@ -43419,6 +43419,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -43435,7 +43439,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             stop: true,
             pause: true,
             restart: true,
-            cancel: true
+            cancel: true,
+            workHour: 0,
+            workMin: 0
         };
     },
 
@@ -43604,7 +43610,13 @@ var render = function() {
       _c("span", [_vm._v(_vm._s(_vm.zeroPadding(_vm.nowSec)) + "秒")])
     ]),
     _vm._v(" "),
-    _c("h2", { staticClass: "mt-10" }, [_vm._v("出勤時間: 00時間00分00秒")]),
+    _c("h2", { staticClass: "mt-10" }, [
+      _c("span", [_vm._v("出勤時間:")]),
+      _vm._v(" "),
+      _c("span", [_vm._v(_vm._s(_vm.workHour) + "時間")]),
+      _vm._v(" "),
+      _c("span", [_vm._v(_vm._s(_vm.workMin) + "分")])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "mt-30" }, [
       _c(
