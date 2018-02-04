@@ -11,12 +11,12 @@
         </h2>
         <h2 class="mt-10">出勤時間: 00時間00分00秒</h2>
         <div class="mt-30">
-            <button class="btn btn-success mr-10">在宅</button>
-            <button class="btn btn-primary mr-10" :disabled="start" @click="changeStart()">出勤</button>
-            <button class="btn btn-default mr-10" :disabled="!start" @click="changeStart()">退勤</button>
-            <button class="btn btn-warning mr-10">停止</button>
-            <button class="btn btn-info mr-10">再開</button>
-            <button class="btn btn-danger">取消</button>
+            <button class="btn btn-success mr-10" :class="remote" @click="isRemote()">在宅</button>
+            <button class="btn btn-primary mr-10" :disabled="start" @click="isStart()">出勤</button>
+            <button class="btn btn-default mr-10" :disabled="stop" @click="isStop()">退勤</button>
+            <button class="btn btn-warning mr-10" :disabled="pause" @click="isPause()">停止</button>
+            <button class="btn btn-info mr-10" :disabled="restart" @click="isRestart()">再開</button>
+            <button class="btn btn-danger" :disabled="cancel" @click="isCancel()">取消</button>
         </div>
     </div>
 </template>
@@ -32,7 +32,12 @@ export default {
             nowHour: 0,
             nowMin: 0,
             nowSec: 0,
-            start: false
+            remote: '',
+            start: false,
+            stop: true,
+            pause: true,
+            restart: true,
+            cancel:true
         }
     },
     methods: {
@@ -43,8 +48,42 @@ export default {
                 return num
             }
         },
-        changeState() {
-            this.start = !this.start
+        isRemote() {
+            if (this.remote === 'active') {
+                this.remote = ''
+            } else {
+                this.remote = 'active'
+            }
+        },
+        isStart() {
+            this.start = true
+            this.stop = false
+            this.pause = false
+            this.cancel = false
+        },
+        isStop() {
+            this.start = false
+            this.stop = true
+            this.pause = true
+            this.cancel = true
+        },
+        isPause() {
+            this.stop = true
+            this.pause = true
+            this.restart = false
+            this.cancel = true
+        },
+        isRestart() {
+            this.stop = false
+            this.pause = false
+            this.restart = true
+            this.cancel = false
+        },
+        isCancel() {
+            this.start = false
+            this.stop = true
+            this.pause = true
+            this.cancel = true
         }
     },
     created() {
@@ -84,4 +123,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+    .active {
+        opacity: 0.65;
+        box-shadow: none;
+        border-color: #259d6d !important;
+        background: #2ab27b !important;
+    }
+</style>
