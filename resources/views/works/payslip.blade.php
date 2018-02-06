@@ -32,28 +32,30 @@
                     <td>{{ $sumHour + $sumMinute * 1000 }}円</td>
                 </tr>
             </table>
-            <form action="">
-                <table class="table bg-white">
-                    <tr>
-                        <th>月日</th>
-                        <th>出勤時間</th>
-                        <th>交通費</th>
-                        <th>出勤形態</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    <tr>
-                        @foreach($payslip as $row)
-                            <td>{{ $row->date }}</td>
-                            <td>{{ $row->hour }}時間{{ $row->minute }}分</td>
-                            <td>{{ $row->fee }}円</td>
-                            <td>{{ $row->form }}</td>
-                            <td>
+            <table class="table bg-white">
+                <tr>
+                    <th>月日</th>
+                    <th>出勤時間</th>
+                    <th>交通費</th>
+                    <th>出勤形態</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    @foreach($payslip as $row)
+                        <td>{{ $row->date }}</td>
+                        <td>{{ $row->hour }}時間{{ $row->minute }}分</td>
+                        <td>{{ $row->fee }}円</td>
+                        <td>{{ $row->form }}</td>
+                        <td>
+                            <form enctype="multipart/form-data" action="{{ url('/works/payslip/' . $row->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
                                 <button type="submit" class="btn btn-danger">削除</button>
-                            </td>
-                        @endforeach
-                    </tr>
-                </table>
-            </form>
+                            </form>
+                        </td>
+                    @endforeach
+                </tr>
+            </table>
             <div class="text-center">
                 <ul class="pagination">
                     <li>
