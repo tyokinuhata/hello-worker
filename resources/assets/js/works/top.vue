@@ -95,7 +95,7 @@
             },
             sendData() {
                 axios.post('/api/time/store', {
-                    date: '1/1',
+                    date: '2018-02-01',
                     hour: 3,
                     minute: 3,
                     fee: 580,

@@ -17,6 +17,14 @@
             {{--</form>--}}
         {{--</div>--}}
         <div>
+            <form enctype="multipart/form-data" method="POST" action="{{ url('/works/payslip') }}">
+                {{ csrf_field() }}
+                <input type="date" name="from">
+                <input type="date" name="to">
+                <button type="submit" class="btn btn-primary">検索</button>
+            </form>
+        </div>
+        <div>
             <h2>給与明細</h2>
             <table class="table bg-white">
                 @if(count($payslip) > 0)
@@ -27,8 +35,8 @@
                         <th>出勤形態</th>
                         <th>&nbsp;</th>
                     </tr>
-                    <tr>
-                        @foreach($payslip as $row)
+                    @foreach($payslip as $row)
+                        <tr>
                             <td>{{ $row->date }}</td>
                             <td>{{ $row->hour }}時間{{ $row->minute }}分</td>
                             <td>{{ $row->fee }}円</td>
@@ -40,8 +48,8 @@
                                     <button type="submit" class="btn btn-danger">削除</button>
                                 </form>
                             </td>
-                        @endforeach
-                    </tr>
+                        </tr>
+                    @endforeach
                 @else
                     <p>該当するデータが見つかりませんでした。</p>
                 @endif
