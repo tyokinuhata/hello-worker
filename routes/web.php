@@ -12,12 +12,8 @@ Route::get('/settings', function () {
 // 勤怠管理
 Route::get('/works', 'WorksController@index');
 
-Route::get('/works/payslip', function () {
-    Config::set(
-        ['mode' => 'works'
-    ]);
-    return view('works.payslip');
-});
+Route::get('/works/payslip', 'PayslipController@index');
+Route::post('/works/payslip', 'PayslipController@index');
 
 // 管理画面
 Route::get('/admin', 'AdminController@index');

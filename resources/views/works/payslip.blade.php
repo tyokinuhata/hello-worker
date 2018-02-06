@@ -3,7 +3,7 @@
 @section('content')
     <div class="mt-100">
         <div>
-            <form action="">
+            <form enctype="multipart/form-data" method="POST" action="{{ url('/works/payslip/search') }}">
                 <input type="date" name="from">
                 <input type="date" name="to">
                 <select name="name">
