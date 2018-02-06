@@ -27,9 +27,9 @@
                 </tr>
                 <tr>
                     <td>20日</td>
-                    <td>100時間00分</td>
-                    <td>5000円</td>
-                    <td>100000円</td>
+                    <td>{{ $sumHour }}時間{{ $sumMinute }}分</td>
+                    <td>{{ $sumFee }}円</td>
+                    <td>{{ $sumHour + $sumMinute * 1000 }}円</td>
                 </tr>
             </table>
             <form action="">
