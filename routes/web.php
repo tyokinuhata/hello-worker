@@ -11,6 +11,7 @@ Route::get('/settings', function () {
 
 // 勤怠管理
 Route::get('/works', 'WorksController@index');
+Route::post('/api/time/store', 'WorksController@store');
 
 Route::get('/works/payslip', 'PayslipController@index');
 Route::post('/works/payslip', 'PayslipController@index');
