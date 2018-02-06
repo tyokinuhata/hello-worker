@@ -25,3 +25,9 @@
 .width-50 {
   width: 50%;
 }
+
+// btn delete outline
+.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+  outline: none;
+  outline-offset: 0;
+}
