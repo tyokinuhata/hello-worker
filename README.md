@@ -1,9 +1,38 @@
-# how to use
+# Setup & Build
+
+### 1. Module install
 
 ```
 $ composer install
-$ php artisan key:generate
 $ npm i
-$ npm run dev
+```
+
+### 2. Create ".env"
+
+```
+$ cp .env.example .env
+```
+
+### 3. Create "SQLite" & edit ".env"
+
+```
+$ touch database/database.sqlite
+```
+
+```
+...
+DB_CONNECTION=sqlite
+...
+```
+
+### 4. Run migration
+
+```
+$ php artisan migrate
+```
+
+### 8. Start up local server
+
+```
 $ php artisan serve
 ```
