@@ -3,11 +3,13 @@
 @section('content')
     <div class="mt-100">
         <div>
-            <form enctype="multipart/form-data" method="POST" action="{{ url('/works/payslip/search') }}">
+            <form enctype="multipart/form-data" method="POST" action="{{ url('/works/payslip') }}">
                 <input type="date" name="from">
                 <input type="date" name="to">
                 <select name="name">
-                    <option value="">たかし</option>
+                    @foreach($names as $name)
+                        <option value="">{{ $name->name }}</option>
+                    @endforeach
                 </select>
                 <button type="submit" class="btn btn-primary">検索</button>
             </form>

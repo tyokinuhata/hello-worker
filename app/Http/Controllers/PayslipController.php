@@ -16,6 +16,10 @@ class PayslipController extends Controller {
             ['mode' => 'works'
         ]);
 
-        return view('works.payslip');
+        $names = DB::table('users')->select('name')->get();
+
+        return view('works.payslip', [
+            'names' => $names
+        ]);
     }
 }
