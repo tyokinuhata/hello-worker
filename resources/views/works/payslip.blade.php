@@ -19,8 +19,8 @@
         <div>
             <form enctype="multipart/form-data" method="POST" action="{{ url('/works/payslip') }}">
                 {{ csrf_field() }}
-                <input type="date" name="from">
-                <input type="date" name="to">
+                <input type="date" name="from" required>
+                <input type="date" name="to" required>
                 <button type="submit" class="btn btn-primary">検索</button>
             </form>
         </div>
