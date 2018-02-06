@@ -2,18 +2,20 @@
 
 @section('content')
     <div class="mt-100">
-        <div>
-            <form enctype="multipart/form-data" method="POST" action="{{ url('/works/payslip') }}">
-                <input type="date" name="from">
-                <input type="date" name="to">
-                <select name="name">
-                    @foreach($names as $name)
-                        <option value="">{{ $name->name }}</option>
-                    @endforeach
-                </select>
-                <button type="submit" class="btn btn-primary">検索</button>
-            </form>
-        </div>
+        {{--TODO: 管理画面に移動--}}
+        {{--<div>--}}
+            {{--<form enctype="multipart/form-data" method="POST" action="{{ url('/works/payslip') }}">--}}
+                {{--{{ csrf_field() }}--}}
+                {{--<input type="date" name="from">--}}
+                {{--<input type="date" name="to">--}}
+                {{--<select name="name">--}}
+                    {{--@foreach($names as $name)--}}
+                        {{--<option value="">{{ $name->name }}</option>--}}
+                    {{--@endforeach--}}
+                {{--</select>--}}
+                {{--<button type="submit" class="btn btn-primary">検索</button>--}}
+            {{--</form>--}}
+        {{--</div>--}}
         <div>
             <h2>給与明細</h2>
             <table class="table bg-white">
@@ -40,13 +42,15 @@
                         <th>&nbsp;</th>
                     </tr>
                     <tr>
-                        <td>1/1(金)</td>
-                        <td>5時間00分</td>
-                        <td>250円</td>
-                        <td>出勤</td>
-                        <td>
-                            <button type="submit" class="btn btn-danger">削除</button>
-                        </td>
+                        @foreach($payslip as $row)
+                            <td>{{ $row->date }}</td>
+                            <td>{{ $row->hour }}時間{{ $row->minute }}分</td>
+                            <td>{{ $row->fee }}円</td>
+                            <td>{{ $row->form }}</td>
+                            <td>
+                                <button type="submit" class="btn btn-danger">削除</button>
+                            </td>
+                        @endforeach
                     </tr>
                 </table>
             </form>
