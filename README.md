@@ -34,5 +34,5 @@ $ php artisan migrate
 ### 8. Start up local server
 
 ```
-$ php -S localhost:8000 -t public
+$ php artisan serve
 ```
