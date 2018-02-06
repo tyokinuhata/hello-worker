@@ -44,9 +44,11 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-            @yield('content')
-        </div>
+        <div class="wrapper">
+            <div class="container">
+                @yield('content')
+            </div>
+        <div class="wrapper">
         <div class="footer">
             Copyright 2017 - 2018 ASS All Rights Reserved
         </div>
