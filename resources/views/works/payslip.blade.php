@@ -64,7 +64,7 @@
                 </tr>
                 <tr>
                     {{--TODO: 見直す必要あり--}}
-                    <td>20日</td>
+                    <td>{{ $cntDate }}日</td>
                     <td>{{ $sumHour }}時間{{ $sumMinute }}分</td>
                     <td>{{ $sumFee }}円</td>
                     <td>{{ $sumHour + $sumMinute * 1000 }}円</td>

@@ -21,6 +21,11 @@ class PayslipController extends Controller {
                         ->where('date', '<=', strtotime($request->to))
                         ->get();
 
+        $cntDate = Time::where('user_id', Auth::user()->user_id)
+                        ->where('date', '>=', strtotime($request->from))
+                        ->where('date', '<=', strtotime($request->to))
+                        ->count();
+
         $sumHour = Time::where('user_id', Auth::user()->user_id)
                         ->where('date', '>=', strtotime($request->from))
                         ->where('date', '<=', strtotime($request->to))
@@ -38,6 +43,7 @@ class PayslipController extends Controller {
 
         return view('works.payslip', [
             'payslip' => $payslip,
+            'cntDate' => $cntDate,
             'sumHour' => $sumHour,
             'sumMinute' => $sumMinute,
             'sumFee' => $sumFee,
