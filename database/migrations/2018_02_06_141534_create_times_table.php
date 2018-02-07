@@ -20,7 +20,7 @@ class CreateTimesTable extends Migration
             $table->unsignedInteger('hour');
             $table->unsignedInteger('minute');
             $table->unsignedInteger('fee')->comment('交通費');
-            $table->unsignedInteger('form')->comment('出勤形態');
+            $table->string('form')->comment('出勤形態');
             $table->timestamps();
         });
     }
