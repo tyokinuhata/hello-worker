@@ -43534,7 +43534,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         sendData: function sendData() {
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/time/store', {
-                date: '2018-02-01',
+                date: '2014-02-01',
                 hour: 3,
                 minute: 3,
                 fee: 580,

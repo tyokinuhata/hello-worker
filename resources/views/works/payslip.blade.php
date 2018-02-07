@@ -37,7 +37,7 @@
                     </tr>
                     @foreach($payslip as $row)
                         <tr>
-                            <td>{{ $row->date }}</td>
+                            <td>{{ date('Y/m/d', $row->date) }}</td>
                             <td>{{ $row->hour }}時間{{ $row->minute }}分</td>
                             <td>{{ $row->fee }}円</td>
                             <td>{{ $row->form }}</td>

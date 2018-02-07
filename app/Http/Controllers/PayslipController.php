@@ -21,10 +21,20 @@ class PayslipController extends Controller {
                         ->where('date', '<=', strtotime($request->to))
                         ->get();
 
-//        $payslip = DB::table('times')->select('id', 'date', 'hour', 'minute', 'fee', 'form')->where('user_id', '=', Auth::user()->user_id)->get();
-        $sumHour = DB::table('times')->where('user_id', Auth::user()->user_id)->sum('hour');
-        $sumMinute = DB::table('times')->where('user_id', Auth::user()->user_id)->sum('minute');
-        $sumFee = DB::table('times')->where('user_id', Auth::user()->user_id)->sum('fee');
+        $sumHour = Time::where('user_id', Auth::user()->user_id)
+                        ->where('date', '>=', strtotime($request->from))
+                        ->where('date', '<=', strtotime($request->to))
+                        ->sum('hour');
+
+        $sumMinute = Time::where('user_id', Auth::user()->user_id)
+                        ->where('date', '>=', strtotime($request->from))
+                        ->where('date', '<=', strtotime($request->to))
+                        ->sum('minute');
+
+        $sumFee = Time::where('user_id', Auth::user()->user_id)
+                        ->where('date', '>=', strtotime($request->from))
+                        ->where('date', '<=', strtotime($request->to))
+                        ->sum('fee');
 
         return view('works.payslip', [
             'payslip' => $payslip,
