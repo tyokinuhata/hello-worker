@@ -8,7 +8,7 @@ use Config;
 
 class AdminController extends Controller {
     public function index() {
-        if (Auth::user()->authority === '1') {
+        if (Auth::user()->authority === true) {
             return view('admin.top');
         } else {
             return redirect('/');
