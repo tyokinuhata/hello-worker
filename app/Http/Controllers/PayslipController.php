@@ -19,7 +19,7 @@ class PayslipController extends Controller {
         $payslip = Time::where('user_id', '=', Auth::user()->user_id)
                         ->where('date', '>=', strtotime($request->from))
                         ->where('date', '<=', strtotime($request->to))
-                        ->get();
+                        ->paginate(10);
 
         $cntDate = Time::where('user_id', Auth::user()->user_id)
                         ->where('date', '>=', strtotime($request->from))

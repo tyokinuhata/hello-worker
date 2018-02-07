@@ -50,6 +50,7 @@
                             </td>
                         </tr>
                     @endforeach
+                    {{ $payslip->links() }}
                 @else
                     <p>該当するデータが見つかりませんでした。</p>
                 @endif
@@ -70,25 +71,6 @@
                     <td>{{ $sumHour + $sumMinute * 1000 }}円</td>
                 </tr>
             </table>
-            <div class="text-center">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">
-                            <span aria-hidden="true">«</span>
-                        </a>
-                    </li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#">
-                            <span aria-hidden="true">»</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
 @endsection
