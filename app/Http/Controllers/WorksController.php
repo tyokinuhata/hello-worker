@@ -17,7 +17,7 @@ class WorksController extends Controller {
     public function store(Request $request) {
         $time = new Time;
         $time->user_id = Auth::user()->user_id;
-        $time->date = strtotime($request->date);
+        $time->date = intval(strtotime($request->date));
         $time->hour = $request->hour;
         $time->minute = $request->minute;
         $time->fee = $request->fee;
