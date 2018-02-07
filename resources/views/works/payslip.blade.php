@@ -26,8 +26,8 @@
         </div>
         <div>
             <h2>給与明細</h2>
-            <table class="table bg-white">
-                @if(count($payslip) > 0)
+            @if(count($payslip) > 0)
+                <table class="table bg-white">
                     <tr>
                         <th>月日</th>
                         <th>出勤時間</th>
@@ -50,27 +50,31 @@
                             </td>
                         </tr>
                     @endforeach
-                    {{ $payslip->links() }}
-                @else
-                    <p>該当するデータが見つかりませんでした。</p>
-                @endif
-            </table>
+                </table>
+                {{ $payslip->links() }}
+            @else
+                <p>該当するデータが見つかりませんでした。</p>
+            @endif
             <h2>合計</h2>
-            <table class="table bg-white">
-                <tr>
-                    <th>合計出勤回数</th>
-                    <th>合計出勤時間</th>
-                    <th>合計交通費</th>
-                    <th>合計金額</th>
-                </tr>
-                <tr>
-                    {{--TODO: 見直す必要あり--}}
-                    <td>{{ $cntDate }}回</td>
-                    <td>{{ $sumHour }}時間{{ $sumMinute }}分</td>
-                    <td>{{ $sumFee }}円</td>
-                    <td>{{ $sumHour + $sumMinute * 1000 }}円</td>
-                </tr>
-            </table>
+            @if($cntDate > 0)
+                <table class="table bg-white">
+                    <tr>
+                        <th>合計出勤回数</th>
+                        <th>合計出勤時間</th>
+                        <th>合計交通費</th>
+                        <th>合計金額</th>
+                    </tr>
+                    <tr>
+                        {{--TODO: 見直す必要あり--}}
+                        <td>{{ $cntDate }}回</td>
+                        <td>{{ $sumHour }}時間{{ $sumMinute }}分</td>
+                        <td>{{ $sumFee }}円</td>
+                        <td>{{ $sumHour + $sumMinute * 1000 }}円</td>
+                    </tr>
+                </table>
+            @else
+                <p>該当するデータが見つかりませんでした</p>
+            @endif
         </div>
     </div>
 @endsection
