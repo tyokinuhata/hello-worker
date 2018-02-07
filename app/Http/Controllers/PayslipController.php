@@ -12,10 +12,6 @@ class PayslipController extends Controller {
 
     public function index(Request $request) {
 
-        Config::set(
-            ['mode' => 'works'
-        ]);
-
         // TODO: 管理画面に移動
 //        $payslip = DB::table('times')->select('date', 'hour', 'minute', 'fee', 'form')->where('user_id', $request->user_id)->get();
 
@@ -42,5 +38,12 @@ class PayslipController extends Controller {
         $time->delete();
 
         return redirect('/works/payslip');
+    }
+
+    public function __construct() {
+        Config::set([
+            'mode' => 'works'
+        ]);
+        $this->middleware('auth');
     }
 }
