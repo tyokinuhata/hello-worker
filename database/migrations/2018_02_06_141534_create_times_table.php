@@ -16,7 +16,7 @@ class CreateTimesTable extends Migration
         Schema::create('times', function (Blueprint $table) {
             $table->increments('id');
             $table->string('user_id');
-            $table->string('date')->comment('出勤日');
+            $table->unsignedInteger('date')->comment('出勤日');
             $table->unsignedInteger('hour');
             $table->unsignedInteger('minute');
             $table->unsignedInteger('fee')->comment('交通費');
